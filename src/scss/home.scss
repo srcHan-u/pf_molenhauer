@@ -1,3 +1,115 @@
 //====================================================================================================
+.page {
+   &__main-screen {
+      @include adaptiveValue("padding-top", 186, 120);
+      @include adaptiveValue("padding-bottom", 218, 150);
+      background-image: url("../img/home/main-screen-image_bg.jpg");
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: cover;
+   }
+}
+.main-screen {
+   &__container {
+   }
+
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__content-box {
+      flex: 0 1 rem(723);
+   }
+
+   &__title {
+      font-size: rem(64);
+      line-height: math.div(70, 64);
+      letter-spacing: -1.46526px;
+      color: #f7f7f7;
+      &:not(:last-child) {
+         margin-bottom: em(24, 64);
+      }
+   }
+
+   &__text {
+      font-weight: 400;
+      font-size: rem(25);
+      line-height: math.div(28, 25);
+      color: #ffffff;
+      &:not(:last-child) {
+         margin-bottom: em(28, 25);
+      }
+      &:last-child {
+         &:not(:last-child) {
+            margin-bottom: em(40, 25);
+         }
+      }
+   }
+
+   &__actioin-box {
+      display: flex;
+      align-items: center;
+      column-gap: rem(16);
+   }
+
+   &__button {
+      padding: rem(16) 0;
+      &_width-194 {
+         width: rem(194);
+         border-color: #ffffff;
+      }
+      &_width-133 {
+         width: rem(133);
+         padding: rem(16) 0;
+         background-color: #ffffff;
+         color: $mCBlue;
+      }
+   }
+   &__figure-elements {
+      flex: 0 0 rem(407);
+   }
+}
+
+.figure-elements {
+   min-height: rem(560);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   &__item {
+      background-color: $mCBlue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-self: end;
+      &_first {
+         width: rem(151);
+         height: rem(151);
+         border: 8px solid #ffffff;
+      }
+      &_second {
+         width: 125px;
+         height: 125px;
+         align-self: start;
+      }
+      &_third {
+         width: rem(178);
+         height: rem(178);
+      }
+      // transform: rotate(45deg);
+   }
+
+   &__text {
+      font-weight: 900;
+      font-size: rem(21);
+      line-height: 1;
+      // transform: rotate(-45deg);
+      color: #ffffff;
+   }
+}
+
+.button {
+}
 
 //====================================================================================================

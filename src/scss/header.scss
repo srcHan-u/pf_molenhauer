@@ -7,6 +7,7 @@
     min-height: rem(105);
     display: flex;
     align-items: flex-end;
+    z-index: 99;
     &__container {
         max-width: rem(1610);
         flex: 0 1 100%;
@@ -64,14 +65,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $mobile) {
+        justify-content: center;
+    }
     &__icon {
     }
 
     &__body {
         flex: auto;
-        @media (max-width: $mobile) {
-            display: none;
-        }
     }
 
     &__list {
@@ -81,6 +82,11 @@
         flex-wrap: wrap;
         column-gap: percent(32, 632);
         row-gap: rem(15);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            align-items: center;
+            column-gap: 0;
+        }
     }
 
     &__item {
@@ -109,6 +115,10 @@
         }
         &[data-active="true"] {
             opacity: 1;
+        }
+        @media (max-width: $mobile) {
+            color: $mCBlue;
+            font-size: rem(24);
         }
         @media (any-hover: hover) {
             &:hover {
@@ -141,11 +151,36 @@
     }
 }
 
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    min-width: rem(320);
+    transition: left 0.4s ease 0s;
+    .menu-open & {
+        left: 0;
+    }
+    &__body {
+        padding: rem(15) rem(30);
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue("row-gap", 40, 20, 768, 320);
+    }
+    &__icon {
+        align-self: end;
+    }
+}
+
 //====================================================================================================
 
 //Burger
 .icon-menu {
     display: none;
+
     @media (max-width: $mobile) {
         display: block;
         position: relative;
@@ -187,6 +222,15 @@
             &::after {
                 bottom: calc(50% - rem(1));
                 transform: rotate(45deg);
+            }
+        }
+    }
+    &_bg-color-white {
+        @media (max-width: $mobile) {
+            span,
+            &::before,
+            &::after {
+                background-color: #fff;
             }
         }
     }

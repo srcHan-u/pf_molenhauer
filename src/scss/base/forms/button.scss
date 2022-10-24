@@ -1,0 +1,21 @@
+//<BUTTONS (a.btn+tab)>
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: rem(15);
+    line-height: math.div(18, 15);
+    letter-spacing: 0.3px;
+    color: #fff;
+    border: 1px solid transparent;
+    @media (any-hover: hover) {
+        &:hover {
+        }
+    }
+    &._fw {
+        width: 100%;
+    }
+}

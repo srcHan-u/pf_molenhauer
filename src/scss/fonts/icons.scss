@@ -1,0 +1,34 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class*="_icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+
+._icon-arrow_figure:before {
+    content: "\e900";
+  }
+  ._icon-arrow_general:before {
+    content: "\e901";
+  }
+  ._icon-arrow_long:before {
+    content: "\e902";
+  }
+  ._icon-linkedin:before {
+    content: "\e903";
+  }
+  ._icon-plus:before {
+    content: "\e904";
+  }
+  

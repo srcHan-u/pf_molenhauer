@@ -284,3 +284,115 @@
       display: none;
    }
 }
+
+//========================================================================================================================================================
+
+.page {
+   &__benefits {
+   }
+}
+.benefits {
+   &__container {
+      max-width: rem(1439);
+   }
+
+   &__body {
+   }
+
+   &__text-box {
+      display: flex;
+      justify-content: center;
+      column-gap: rem(24);
+      &:not(:last-child) {
+         margin-bottom: percent(88, 1439);
+      }
+   }
+
+   &__sub-title {
+      flex: 0 1 rem(465);
+   }
+
+   &__description {
+      flex: 0 1 rem(437);
+   }
+
+   &__slider {
+   }
+}
+
+.slider-benefits {
+   &__wrapper {
+   }
+
+   &__controls {
+      max-width: rem(1007);
+      width: 100%;
+      margin: 0px 0px 0px auto;
+      padding: rem(17) 0;
+      background-color: #ffffff;
+      border: 1px solid black;
+   }
+}
+.controls-slider-benefits {
+   position: relative;
+   &__tabs {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      max-width: rem(913);
+      margin: 0 auto;
+      column-gap: percent(48, 913);
+   }
+
+   &__tab {
+      flex: 0 1 calc(100% / 5);
+      color: #a8acad;
+      transition: flex 1s ease 0s;
+      &[data-active="true"] {
+         color: $mCGrayBold;
+         flex: 0 1 calc(100% / 5 + 12%);
+      }
+   }
+
+   &__tab-number {
+      font-weight: 700;
+      font-size: rem(17);
+      line-height: 1em;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      flex-direction: row-reverse;
+      &::before {
+         transform: translate(50%, 50%);
+      }
+   }
+
+   &__tab-text {
+      font-weight: 600;
+      font-size: rem(20);
+      line-height: math.div(17, 20);
+      letter-spacing: -1px;
+   }
+
+   &__buttons {
+      width: rem(143);
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateY(100%);
+      > button {
+         flex: 0 0 50%;
+         height: rem(71.5);
+         color: #fff;
+      }
+   }
+
+   &__button-prev {
+      background-color: $mCBlue;
+      transform: scaleX(-1);
+   }
+
+   &__button-next {
+      background-color: $mCOrange;
+   }
+}

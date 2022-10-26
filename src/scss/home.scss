@@ -322,19 +322,35 @@
 
 .slider-benefits {
    &__wrapper {
+      overflow: hidden;
+      position: relative;
+      min-height: rem(558);
    }
 
    &__controls {
       max-width: rem(1007);
       width: 100%;
       margin: 0px 0px 0px auto;
-      padding: rem(17) 0;
+      // padding: rem(17) 0;
       background-color: #ffffff;
       border: 1px solid black;
    }
+   &__slide {
+   }
 }
 .controls-slider-benefits {
-   position: relative;
+   // display: none;
+   position: absolute;
+   top: 0;
+   right: 0;
+   &__wrapper {
+      min-height: rem(156);
+      position: relative;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
    &__tabs {
       display: flex;
       justify-content: flex-start;
@@ -394,5 +410,48 @@
 
    &__button-next {
       background-color: $mCOrange;
+   }
+}
+
+.slide-slider-benefits {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   position: absolute;
+   transition: left 1s ease 0s;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   &[data-active="true"] {
+      // position: relative;
+      transition: left 1s ease 1s;
+      left: 0;
+   }
+   &__image {
+      // flex: 0 0 rem(936);
+      max-width: rem(936);
+      display: inline-block;
+      width: 100%;
+   }
+
+   &__text-box {
+      flex: 0 1 rem(394);
+   }
+
+   &__heading {
+      font-weight: 700;
+      font-size: rem(28);
+      line-height: 1em;
+      letter-spacing: -1px;
+      color: #000000;
+      &:not(:last-child) {
+         margin-bottom: em(16, 28);
+      }
+   }
+
+   &__description {
+      line-height: math.div(21, 16);
+      letter-spacing: 0.3px;
+      color: $mCGray;
    }
 }

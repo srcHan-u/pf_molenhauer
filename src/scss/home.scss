@@ -183,6 +183,7 @@
 
 .page {
    &__cases {
+      @include adaptiveValue("padding-bottom", 168, 120);
    }
 }
 .cases {
@@ -224,6 +225,10 @@
 }
 
 .list-cases {
+   background-image: url("../img/home/case-bg_1svg.svg");
+   background-position: bottom center;
+   background-repeat: no-repeat;
+   background-size: contain;
    &__item {
       flex: 0 1 calc(100% / 6);
    }
@@ -234,6 +239,8 @@
 .card-case {
    border: 1px solid #e2e2e2;
    min-height: rem(488);
+   // background-color: #ffffff;
+   position: relative;
    &__body {
       font-family: "Mulish";
       font-weight: 800;
@@ -241,6 +248,8 @@
       line-height: 1em;
       letter-spacing: 0.3px;
       padding: percent(55, 488) rem(41);
+      z-index: 3;
+      position: relative;
    }
 
    &__number {
@@ -252,12 +261,26 @@
       color: $mCOrange;
       &::before {
          font-size: rem(12.5);
-         transform: translateY(50%);
+         transform: translate(50%, 50%);
+      }
+      ._isActive & {
+         color: #ffffff;
       }
    }
 
    &__heading {
       color: $mCGrayBold;
       margin-top: 100%;
+      ._isActive & {
+         color: #ffffff;
+      }
+   }
+   &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
    }
 }

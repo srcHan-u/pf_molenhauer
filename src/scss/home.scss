@@ -187,6 +187,7 @@
 }
 .cases {
    &__container {
+      max-width: rem(1728);
    }
 
    &__body {
@@ -195,6 +196,7 @@
    &__text-box {
       max-width: rem(536);
       margin: 0 auto;
+      text-align: center;
       &:not(:last-child) {
          margin-bottom: rem(51);
       }
@@ -209,29 +211,53 @@
    &__description {
       font-size: rem(18);
       line-height: math.div(23, 18);
-      text-align: center;
       letter-spacing: 0.3px;
       color: $mCGray;
    }
 
    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      // flex-wrap: wrap;
    }
 }
 
 .list-cases {
    &__item {
+      flex: 0 1 calc(100% / 6);
    }
 
    &__card {
    }
 }
 .card-case {
+   border: 1px solid #e2e2e2;
+   min-height: rem(488);
    &__body {
+      font-family: "Mulish";
+      font-weight: 800;
+      font-size: rem(17);
+      line-height: 1em;
+      letter-spacing: 0.3px;
+      padding: percent(55, 488) rem(41);
    }
 
    &__number {
+      display: inline-flex;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      justify-content: center;
+
+      color: $mCOrange;
+      &::before {
+         font-size: rem(12.5);
+         transform: translateY(50%);
+      }
    }
 
    &__heading {
+      color: $mCGrayBold;
+      margin-top: 100%;
    }
 }

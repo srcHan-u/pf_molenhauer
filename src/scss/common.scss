@@ -1,41 +1,52 @@
 // Заголовки, общие БЄМ блоки и проче...
 .sub-title {
-    font-weight: 700;
-    @include adaptiveValue("font-size", 40, 28);
-    letter-spacing: -1px;
-    color: #ffffff;
+   font-weight: 700;
+   @include adaptiveValue("font-size", 40, 28);
+   letter-spacing: -1px;
+   color: #ffffff;
 }
 
 .heading {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 100%;
-    letter-spacing: -1px;
+   font-weight: 700;
+   font-size: 32px;
+   line-height: 100%;
+   letter-spacing: -1px;
 
-    color: #000000;
+   color: #000000;
 }
 
 .color-black {
-    color: #000000;
+   color: #000000;
 }
 .color-orange {
-    color: $mCOrange;
+   color: $mCOrange;
 }
 .font-weight-400 {
-    font-weight: 400;
+   font-weight: 400;
 }
 
 .logo {
-    max-width: rem(263);
-    min-width: rem(150);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    > img {
-        width: 100%;
-    }
+   max-width: rem(263);
+   min-width: rem(150);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   > img {
+      width: 100%;
+   }
 }
 
-em.selected-text{
-   
+em.selected-text {
+}
+
+.background-element-shape {
+   position: absolute;
+   top: 150px;
+   right: -520px;
+   display: block;
+   background-color: $mCOrange;
+   width: rem(618);
+   height: rem(618);
+   transform: rotate(45deg);
+   opacity: 0.8;  
 }

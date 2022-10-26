@@ -1,5 +1,6 @@
 //====================================================================================================
 .page {
+   position: relative;
    &__main-screen {
       @include adaptiveValue("padding-top", 186, 120);
       @include adaptiveValue("padding-bottom", 218, 150);
@@ -144,7 +145,93 @@
    }
 }
 
-.button {
+//====================================================================================================
+
+.page {
+   &__services {
+      background-color: $mCBlue;
+   }
+}
+.services {
+   &__container {
+   }
+
+   &__body {
+   }
+
+   &__text-box {
+      max-width: rem(406);
+   }
+
+   &__sub-title {
+      &:not(:last-child) {
+         margin-bottom: em(24, 40);
+      }
+   }
+
+   &__description {
+      font-size: rem(18);
+      line-height: math.div(23, 18);
+      letter-spacing: 0.3px;
+      color: #ffffff;
+   }
+}
+.sub-title {
 }
 
-//====================================================================================================
+//========================================================================================================================================================
+
+.page {
+   &__cases {
+   }
+}
+.cases {
+   &__container {
+   }
+
+   &__body {
+   }
+
+   &__text-box {
+      max-width: rem(536);
+      margin: 0 auto;
+      &:not(:last-child) {
+         margin-bottom: rem(51);
+      }
+   }
+
+   &__sub-title {
+      &:not(:last-child) {
+         margin-bottom: em(24, 40);
+      }
+   }
+
+   &__description {
+      font-size: rem(18);
+      line-height: math.div(23, 18);
+      text-align: center;
+      letter-spacing: 0.3px;
+      color: $mCGray;
+   }
+
+   &__list {
+   }
+}
+
+.list-cases {
+   &__item {
+   }
+
+   &__card {
+   }
+}
+.card-case {
+   &__body {
+   }
+
+   &__number {
+   }
+
+   &__heading {
+   }
+}

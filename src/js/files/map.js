@@ -1,17 +1,19 @@
 
 function mapAdd() {
 	let tag = document.createElement('script');
-	tag.src = "https://maps.google.com/maps/api/js?sensor=false&amp;key=&callback=mapInit";
+    tag.async = true;
+    tag.defer = true;
+	tag.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCx8o_Fh6iPKeS97e1HS-miIG0Z4vnp6Qc&callback=mapInit";
 	let firstScriptTag = document.getElementsByTagName('script')[0];
 	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 function mapInit(n = 1) {
 	google.maps.Map.prototype.setCenterWithOffset = function (latlng, offsetX, offsetY) {
-		var map = this;
-		var ov = new google.maps.OverlayView();
+		let map = this;
+		let ov = new google.maps.OverlayView();
 		ov.onAdd = function () {
-			var proj = this.getProjection();
-			var aPoint = proj.fromLatLngToContainerPixel(latlng);
+			let proj = this.getProjection();
+			let aPoint = proj.fromLatLngToContainerPixel(latlng);
 			aPoint.x = aPoint.x + offsetX;
 			aPoint.y = aPoint.y + offsetY;
 			map.panTo(proj.fromContainerPixelToLatLng(aPoint));
@@ -20,18 +22,15 @@ function mapInit(n = 1) {
 		ov.draw = function () { };
 		ov.setMap(this);
 	};
-	var markers = new Array();
-	var infowindow = new google.maps.InfoWindow({
+	let markers = new Array();
+	let infowindow = new google.maps.InfoWindow({
 		//pixelOffset: new google.maps.Size(-230,250)
 	});
-	var locations = [
-		[new google.maps.LatLng(53.819055, 27.8813694)],
-		[new google.maps.LatLng(53.700055, 27.5513694)],
-		[new google.maps.LatLng(53.809055, 27.5813694)],
-		[new google.maps.LatLng(53.859055, 27.5013694)],
+	let locations = [
+		[new google.maps.LatLng(51.635051953984515, 8.497426462780295)],
 	]
-	var options = {
-		zoom: 10,
+	let options = {
+		zoom: 16,
 		panControl: false,
 		mapTypeControl: false,
 		center: locations[0][0],
@@ -39,24 +38,24 @@ function mapInit(n = 1) {
 		scrollwheel: false,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
-	var map = new google.maps.Map(document.getElementById('map'), options);
-	var icon = {
+	let map = new google.maps.Map(document.getElementById('map'), options);
+	let icon = {
 		url: 'img/icons/map.svg',
 		scaledSize: new google.maps.Size(18, 20),
 		anchor: new google.maps.Point(9, 10)
 	}
-	for (var i = 0; i < locations.length; i++) {
-		var marker = new google.maps.Marker({
+	for (let i = 0; i < locations.length; i++) {
+		let marker = new google.maps.Marker({
 			icon: icon,
 			position: locations[i][0],
 			map: map,
 		});
 		google.maps.event.addListener(marker, 'click', (function (marker, i) {
 			return function () {
-				for (var m = 0; m < markers.length; m++) {
+				for (let m = 0; m < markers.length; m++) {
 					markers[m].setIcon(icon);
 				}
-				var cnt = i + 1;
+				let cnt = i + 1;
 				//infowindow.setContent(document.querySelector('.events-map__item_' + cnt).innerHTML);
 				//infowindow.open(map, marker);
 				marker.setIcon(icon);
@@ -69,13 +68,14 @@ function mapInit(n = 1) {
 		markers.push(marker);
 	}
 	if (n) {
-		var nc = n - 1;
+		let nc = n - 1;
 		setTimeout(function () {
 			google.maps.event.trigger(markers[nc], 'click');
 		}, 500);
 	}
 }
 if (document.querySelector('#map')) {
+    window.mapInit = mapInit;
 	mapAdd();
 }
 

@@ -701,9 +701,119 @@
         display: inline-flex;
         align-items: center;
         column-gap: rem(16);
-        // align-self: start;
         &::before {
             color: $mCOrange;
         }
+    }
+}
+
+//========================================================================================================================================================
+
+.page {
+    &__map {
+    }
+}
+.map {
+    &__container {
+        max-width: rem(1730);
+    }
+
+    &__body {
+    }
+}
+
+.page {
+    &__map {
+    }
+}
+.map {
+    &__container {
+    }
+
+    &__body {
+        position: relative;
+    }
+
+    &__aside-info {
+    }
+}
+
+.aside-info-map {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    max-width: rem(493);
+    width: 100%;
+    min-width: rem(290);
+    min-height: rem(346);
+    background-color: #fff;
+    z-index: 4;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    &__logo {
+        flex: 0 0 rem(72);
+    }
+}
+
+.info-map-content {
+    flex: 0 1 rem(279);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: rem(15);
+    line-height: math.div(22, 15);
+    color: #313131;
+    row-gap: rem(16);
+    &__heading {
+        font-weight: 700;
+        &:not(:last-child) {
+            margin-bottom: em(11, 15);
+        }
+    }
+
+    &__address {
+    }
+
+    &__tel {
+    }
+
+    &__mail {
+        color: $mCOrange;
+    }
+}
+
+.info-map-social {
+    display: flex;
+    align-items: center;
+    max-width: rem(240);
+    justify-content: space-between;
+    width: 100%;
+    column-gap: rem(10);
+    &__heading {
+        font-weight: 700;
+    }
+    &__social {
+        display: flex;
+        align-items: center;
+        column-gap: rem(16);
+    }
+
+    &__item {
+    }
+    &__link {
+        font-weight: 500;
+        color: $mCOrange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(40);
+        height: rem(40);
+        border-radius: 50%;
+        border: 1px solid $mCOrange;
     }
 }

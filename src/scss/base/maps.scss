@@ -1,3 +1,8 @@
 #map {
-	background: url("@img/icons/loading.gif") center / 50px no-repeat;
+    background: url("@img/icons/loading.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: 100%;
+    height: rem(400);
 }

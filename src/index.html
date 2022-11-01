@@ -353,14 +353,16 @@
                           </p>
                         </li>
                       </ul>
-                      <div class="controls-slider-benefits__buttons">
+                      <div
+                        class="controls-slider-benefits__buttons swiper-buttons-box"
+                      >
                         <button
                           type="button"
-                          class="controls-slider-benefits__button-prev _icon-arrow_general"
+                          class="controls-slider-benefits__button-prev swiper-buttons-box__button-prev _icon-arrow_general"
                         ></button>
                         <button
                           type="button"
-                          class="controls-slider-benefits__button-next _icon-arrow_general"
+                          class="controls-slider-benefits__button-next swiper-buttons-box__button-next _icon-arrow_general"
                         ></button>
                       </div>
                     </div>
@@ -449,12 +451,33 @@
               <div class="reviews__slider reviews-slider">
                 <div
                   class="reviews-slider__swiper-pagination reviews-slider-swiper-pagination"
-                >
-                  <div class="reviews-slider-swiper-pagination__item"></div>
-                </div>
+                ></div>
                 <div class="reviews-slider__wrapper">
+                  <div class="reviews-slider__slide" data-active="true">
+                    <div class="reviews-slider__card-reviews card-reviews">
+                      <div class="card-reviews__body">
+                        <img
+                          src="@img/home/partners-image_4.svg"
+                          alt="image"
+                          class="card-reviews__image"
+                        />
+                        <p class="card-reviews__text">
+                          “Pulvinar nisl nulla elit integer diam maecenas.
+                          Mauris nunc at arcu urna. Erat quisque neque, a augue
+                          lectus vitae faucibus facilisi. Aenean mauris duis sed
+                          congue magna scelerisque dolor eget in. Euismod eros,
+                          in cursus aliquam. Suspendisse odio est nullam
+                          vulputate quis nam ultricies.”
+                        </p>
+                        <div class="card-reviews__info">
+                          <p class="card-reviews__name">Jack Carty</p>
+                          <p class="card-reviews__post">SEO</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="reviews-slider__slide">
-                    <div class="card-reviews">
+                    <div class="reviews-slider__card-reviews card-reviews">
                       <div class="card-reviews__body">
                         <img
                           src="@img/home/partners-image_4.svg"
@@ -477,14 +500,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="reviews-slider__buttons">
+                <div class="reviews-slider__buttons swiper-buttons-box">
                   <button
                     type="button"
-                    class="reviews-slider__swiper-button-prev"
+                    class="swiper-buttons-box__button-prev _icon-arrow_general"
                   ></button>
                   <button
                     type="button"
-                    class="reviews-slider__swiper-button-next"
+                    class="swiper-buttons-box__button-next _icon-arrow_general"
                   ></button>
                 </div>
               </div>

@@ -150,6 +150,8 @@
 .page {
    &__services {
       background-color: $mCBlue;
+      @include adaptiveValue("padding-bottom", 152, 120);
+      @include adaptiveValue("padding-top", 104, 50);
    }
 }
 .services {
@@ -381,6 +383,9 @@
       &::before {
          transform: translate(50%, 50%);
       }
+      &:not(:last-child) {
+         margin-bottom: rem(36.5);
+      }
    }
 
    &__tab-text {
@@ -391,8 +396,6 @@
    }
 
    &__buttons {
-      width: rem(143);
-      display: flex;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -402,15 +405,6 @@
          height: rem(71.5);
          color: #fff;
       }
-   }
-
-   &__button-prev {
-      background-color: $mCBlue;
-      transform: scaleX(-1);
-   }
-
-   &__button-next {
-      background-color: $mCOrange;
    }
 }
 
@@ -529,6 +523,7 @@
 
 .page {
    &__reviews {
+      @include adaptiveValue("padding-bottom", 182, 120);
    }
 }
 .reviews {
@@ -566,6 +561,7 @@
    display: flex;
    justify-content: space-between;
    min-height: rem(614);
+   overflow: hidden;
    &__wrapper {
       border: 39px solid $mCOrange;
       position: relative;
@@ -598,15 +594,25 @@
    }
 
    &__slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -200%;
+      &[data-active="true"] {
+         left: 0;
+      }
    }
-
+   &__card-reviews {
+      position: absolute;
+      top: 50%;
+      left: 37px;
+      width: 100%;
+      z-index: 3;
+      transform: translateY(-50%);
+   }
    &__buttons {
-   }
-
-   &__swiper-button-prev {
-   }
-
-   &__swiper-button-next {
+      align-self: flex-end;
    }
 }
 .reviews-slider-swiper-pagination {
@@ -619,13 +625,22 @@
       height: rem(10);
       background-color: #d9d9d9;
       border-radius: 50%;
+      &[data-active="true"] {
+         background-color: $mCOrange;
+      }
    }
 }
 .card-reviews {
    &__body {
+      min-height: rem(362);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
    }
 
    &__image {
+      width: 202px;
    }
 
    &__text {
@@ -636,6 +651,7 @@
       line-height: math.div(28, 19);
       letter-spacing: 0.27px;
       color: #4a4b4e;
+      width: 115%;
    }
 
    &__info {
@@ -654,6 +670,9 @@
       font-size: rem(20);
       letter-spacing: 0.18px;
       color: #2f3034;
+      &:not(:last-child) {
+         margin-bottom: em(14, 20);
+      }
    }
 }
 

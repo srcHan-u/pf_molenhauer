@@ -49,3 +49,21 @@ em.selected-text {
    transform: rotate(45deg);
    opacity: 0.8;
 }
+
+.swiper-buttons-box {
+   display: flex;
+   width: rem(143);
+   > button {
+      flex: 0 0 50%;
+      height: rem(71.5);
+      color: #fff;
+   }
+   &__button-prev {
+      background-color: $mCBlue;
+      transform: scaleX(-1);
+   }
+
+   &__button-next {
+      background-color: $mCOrange;
+   }
+}

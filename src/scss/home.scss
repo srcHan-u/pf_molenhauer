@@ -642,9 +642,18 @@
    }
 
    &__post {
+      font-weight: 600;
+      font-size: rem(15);
+      line-height: math.div(22, 15);
+      letter-spacing: 0.27px;
+      color: $mCOrange;
    }
 
    &__name {
+      font-weight: 700;
+      font-size: rem(20);
+      letter-spacing: 0.18px;
+      color: #2f3034;
    }
 }
 

@@ -1,88 +1,115 @@
 // Заголовки, общие БЄМ блоки и проче...
 .sub-title {
-   font-weight: 700;
-   @include adaptiveValue("font-size", 40, 28);
-   letter-spacing: -1px;
-   color: #ffffff;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 40, 28);
+    letter-spacing: -1px;
+    color: #ffffff;
 }
 
 .heading {
-   font-weight: 700;
-   @include adaptiveValue("font-size", 32, 24);
-   line-height: 100%;
-   letter-spacing: -1px;
-   color: #000000;
+    font-weight: 700;
+    @include adaptiveValue("font-size", 32, 24);
+    line-height: 100%;
+    letter-spacing: -1px;
+    color: #000000;
 }
 
 .color-black {
-   color: #000000;
+    color: #000000;
 }
 .color-orange {
-   color: $mCOrange;
+    color: $mCOrange;
 }
 .font-weight-400 {
-   font-weight: 400;
+    font-weight: 400;
 }
 .font-weight-600 {
-   font-weight: 600;
+    font-weight: 600;
 }
 .font-weight-900 {
-   font-weight: 900;
+    font-weight: 900;
 }
 
 .logo {
-   max-width: rem(263);
-   min-width: rem(150);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   > img {
-      width: 100%;
-   }
+    max-width: rem(263);
+    min-width: rem(150);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > img {
+        width: 100%;
+    }
 }
 
 em.selected-text {
 }
 
 .background-element-shape {
-   position: absolute;
-   // top: 150px;
-   // top: 240px;
-   @include adaptiveValue("top", 150, 240);
-   // right: -520px;
-   // right: -280px;
-   @include adaptiveValue("right", -520, -280);
-   display: block;
-   background-color: $mCOrange;
-   @include adaptiveValue("width", 618, 320);
-   @include adaptiveValue("height", 618, 320);
-   transform: rotate(45deg);
-   opacity: 0.8;
+    position: absolute;
+    // top: 150px;
+    // top: 240px;
+    @include adaptiveValue("top", 150, 240);
+    // right: -520px;
+    // right: -280px;
+    @include adaptiveValue("right", -520, -280);
+    display: block;
+    background-color: $mCOrange;
+    @include adaptiveValue("width", 618, 320);
+    @include adaptiveValue("height", 618, 320);
+    transform: rotate(45deg);
+    opacity: 0.8;
 }
 
+.background-element-triangle {
+    position: absolute;
+    // top: percent(7496, 8864);
+    top: 305.5625rem;
+    // transform: translateY(-100%);
+    left: 0;
+    display: block;
+    width: 100%;
+    height: rem(1727);
+    background-color: #f7f9fc;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%, 0% 0%);
+    pointer-events: none;
+    z-index: 1;
+}
+.background-element-triangle-2 {
+    position: absolute;
+    top: 179.375rem;
+    left: 0;
+    transform: translateX(-50%);
+    display: block;
+    width: rem(2440.86);
+    height: rem(2441.86);
+    background-color: #ffffff;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 50% 50%);
+    pointer-events: none;
+    z-index: -1;
+}
 .swiper-buttons-box {
-   display: flex;
-   width: rem(143);
-   > button {
-      flex: 0 0 50%;
-      height: rem(71.5);
-      color: #fff;
-   }
-   &__button-prev {
-      background-color: $mCBlue;
-      transform: scaleX(-1);
-   }
+    display: flex;
+    width: rem(143);
+    > button {
+        flex: 0 0 50%;
+        height: rem(71.5);
+        color: #fff;
+    }
+    &__button-prev {
+        background-color: $mCBlue;
+        transform: scaleX(-1);
+    }
 
-   &__button-next {
-      background-color: $mCOrange;
-   }
+    &__button-next {
+        background-color: $mCOrange;
+    }
 }
 
 .background-element-gradient {
-   background: linear-gradient(180deg, #06255b 0%, rgba(6, 37, 91, 0) 100%);
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
+    background: linear-gradient(180deg, #06255b 0%, rgba(6, 37, 91, 0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

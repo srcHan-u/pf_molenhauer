@@ -918,6 +918,10 @@
       justify-content: space-between;
       align-items: flex-start;
       column-gap: rem(15);
+      @media (max-width: em(1024)) {
+         flex-direction: column;
+         row-gap: rem(48.5);
+      }
    }
 
    &__item {
@@ -931,8 +935,26 @@
    justify-content: space-between;
    align-items: flex-start;
    max-width: rem(679);
+   column-gap: rem(10);
+   @media (max-width: em(670)) {
+      gap: rem(30);
+   }
+   @media (max-width: em(390)) {
+      flex-direction: column;
+   }
    &__image {
-      flex: 0 1 rem(289);
+      display: block;
+      // flex: 0 1 rem(289);
+      max-width: rem(289);
+      // width: 100%;
+      // max-width: 100%;
+      @media (max-width: em(670)) {
+         // max-width: rem(143);
+         max-width: rem(143);
+      }
+      @media (max-width: em(390)) {
+         align-self: center;
+      }
    }
 
    &__info-box {
@@ -941,12 +963,16 @@
       align-items: flex-start;
       row-gap: rem(16);
       flex: 0 1 rem(346);
+      min-width: rem(191);
+      @media (max-width: em(390)) {
+         flex: auto;
+      }
    }
 
    &__name {
       font-weight: 700;
-      font-size: rem(36);
       color: #000000;
+      @include adaptiveValue("font-size", 36, 21);
    }
 
    &__post {
@@ -962,6 +988,9 @@
       line-height: math.div(22, 16);
       letter-spacing: 0.3px;
       color: $mCGray;
+      @media (max-width: $mobileSmall) {
+         font-size: rem(14);
+      }
    }
 
    &__social {
@@ -986,6 +1015,12 @@
    column-gap: 2px;
    row-gap: rem(50);
    flex-wrap: wrap;
+   @media (max-width: $mobile) {
+      column-gap: rem(16);
+   }
+   @media (max-width: em(480)) {
+      justify-content: center;
+   }
    &__item {
    }
 
@@ -1001,23 +1036,33 @@
    align-items: flex-start;
    justify-content: flex-start;
    // row-gap: rem(16);
+   @media (max-width: $mobile) {
+      width: rem(114);
+      min-height: rem(172);
+   }
    &__image {
       max-width: rem(216);
+      width: 100%;
    }
 
    &__name {
       font-weight: 700;
-      font-size: rem(20);
       line-height: math.div(24, 20);
       display: inline-block;
+      flex: 1 0 100%;
+      @include adaptiveValue("font-size", 20, 15);
    }
 
    &__post {
       display: inline-flex;
-      align-items: center;
+      align-items: flex-start;
       column-gap: rem(16);
+      min-height: rem(32);
       &::before {
          color: $mCOrange;
+      }
+      @media (max-width: $mobile) {
+         font-size: rem(14);
       }
    }
 }

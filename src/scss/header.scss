@@ -1,243 +1,245 @@
 //====================================================================================================
 .header {
-   position: fixed;
-   width: 100%;
-   top: 0;
-   left: 0;
-   min-height: rem(105);
-   display: flex;
-   align-items: flex-end;
-   z-index: 99;
-   pointer-events: none;
-   &__container {
-      max-width: rem(1610);
-      flex: 0 1 100%;
-   }
-   &__logo {
-      pointer-events: all;
-   }
-   &__body {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      column-gap: rem(10);
-   }
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    min-height: rem(105);
+    display: flex;
+    align-items: flex-end;
+    z-index: 99;
+    pointer-events: none;
+    &__container {
+        max-width: rem(1610);
+        flex: 0 1 100%;
+    }
+    &__logo {
+        pointer-events: all;
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: rem(10);
+    }
 
-   &__menu {
-      flex: 0 1 rem(632);
-   }
+    &__menu {
+        flex: 0 1 rem(632);
+        pointer-events: all;
+    }
 
-   &__action-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      // flex-wrap: wrap;
-      column-gap: rem(16);
-      flex: 0 1 rem(329);
-      // @media (max-width: $tablet) {
-      //     flex-wrap: wrap-reverse;
-      //     flex: 0 0 rem(143);
-      //     row-gap: rem(15);
-      // }
-   }
+    &__action-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // flex-wrap: wrap;
+        column-gap: rem(16);
+        flex: 0 1 rem(329);
+        // @media (max-width: $tablet) {
+        //     flex-wrap: wrap-reverse;
+        //     flex: 0 0 rem(143);
+        //     row-gap: rem(15);
+        // }
+    }
 
-   &__button {
-      flex: 0 0 rem(143);
-      min-width: rem(120);
-      padding: rem(19) 0;
-      background-color: $mCOrange;
-      transition: border-color 0.4s ease 0s, color 0.4s ease 0s, background-color 0.4s ease 0s;
-      pointer-events: all;
-      @media (any-hover: hover) {
-         &:hover {
-            border-color: #fff;
-            color: $mCOrange;
-            background-color: transparent;
-         }
-      }
-   }
+    &__button {
+        flex: 0 0 rem(143);
+        min-width: rem(120);
+        padding: rem(19) 0;
+        background-color: $mCOrange;
+        transition: border-color 0.4s ease 0s, color 0.4s ease 0s, background-color 0.4s ease 0s;
+        pointer-events: all;
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: #fff;
+                color: $mCOrange;
+                background-color: transparent;
+            }
+        }
+    }
 
-   &__switcher-lang {
-      flex: 0 1 rem(170);
-      min-width: rem(143);
-      background-color: #fff;
-      min-height: rem(56);
-      pointer-events: all;
-   }
+    &__switcher-lang {
+        flex: 0 1 rem(170);
+        min-width: rem(143);
+        background-color: #fff;
+        min-height: rem(56);
+        pointer-events: all;
+    }
 }
 
 .menu {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   @media (max-width: $mobile) {
-      justify-content: center;
-   }
-   &__icon {
-   }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $mobile) {
+        justify-content: center;
+    }
+    &__icon {
+    }
 
-   &__body {
-      flex: auto;
-   }
+    &__body {
+        flex: auto;
+    }
 
-   &__list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      column-gap: percent(32, 632);
-      row-gap: rem(15);
-      @media (max-width: $mobile) {
-         flex-direction: column;
-         align-items: center;
-         column-gap: 0;
-      }
-   }
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: percent(32, 632);
+        row-gap: rem(15);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            align-items: center;
+            column-gap: 0;
+        }
+    }
 
-   &__item {
-   }
+    &__item {
+    }
 
-   &__link {
-      font-weight: 400;
-      font-size: rem(15);
-      line-height: math.div(18, 15);
-      letter-spacing: 0.2px;
-      color: #ffffff;
-      position: relative;
-      display: inline-block;
-      opacity: 0.6;
-      transition: opacity 0.5s ease 0s;
-      pointer-events: all;
-      &::before {
-         content: "";
-         display: block;
-         width: 0;
-         height: rem(2);
-         position: absolute;
-         background-color: #fff;
-         top: calc(100% + 3px);
-         left: 0;
-         transition: width 0.5s ease 0s;
-      }
-      &[data-active="true"] {
-         opacity: 1;
-      }
-      @media (max-width: $mobile) {
-         color: $mCBlue;
-         font-size: rem(24);
-      }
-      @media (any-hover: hover) {
-         &:hover {
+    &__link {
+        font-weight: 400;
+        font-size: rem(15);
+        line-height: math.div(18, 15);
+        letter-spacing: 0.2px;
+        color: #ffffff;
+        position: relative;
+        display: inline-block;
+        opacity: 0.6;
+        transition: opacity 0.5s ease 0s;
+        pointer-events: all;
+        &::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: rem(2);
+            position: absolute;
+            background-color: #fff;
+            top: calc(100% + 3px);
+            left: 0;
+            transition: width 0.5s ease 0s;
+        }
+        &[data-active="true"] {
             opacity: 1;
-            &::before {
-               width: 100%;
+        }
+        @media (max-width: $mobile) {
+            color: $mCBlue;
+            font-size: rem(24);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 1;
+                &::before {
+                    width: 100%;
+                }
             }
-         }
-      }
-   }
+        }
+    }
 }
 
 .button {
 }
 .switcher-lang {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   &__list {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      column-gap: rem(30);
-   }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: rem(30);
+    }
 
-   &__item {
-   }
+    &__item {
+    }
 
-   &__button {
-   }
+    &__button {
+    }
 }
 
 .mobile-menu {
-   position: fixed;
-   top: 0;
-   left: -100%;
-   width: 50%;
-   height: 100%;
-   background-color: #fff;
-   z-index: 100;
-   min-width: rem(320);
-   transition: left 0.4s ease 0s;
-   .menu-open & {
-      left: 0;
-   }
-   &__body {
-      padding: rem(15) rem(30);
-      display: flex;
-      flex-direction: column;
-      @include adaptiveValue("row-gap", 40, 20, 768, 320);
-   }
-   &__icon {
-      align-self: end;
-   }
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    min-width: rem(320);
+    transition: left 0.4s ease 0s;
+    pointer-events: all;
+    .menu-open & {
+        left: 0;
+    }
+    &__body {
+        padding: rem(15) rem(30);
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue("row-gap", 40, 20, 768, 320);
+    }
+    &__icon {
+        align-self: end;
+    }
 }
 
 //====================================================================================================
 
 //Burger
 .icon-menu {
-   display: none;
+    display: none;
 
-   @media (max-width: $mobile) {
-      display: block;
-      position: relative;
-      width: rem(30);
-      height: rem(18);
-      cursor: pointer;
-      z-index: 5;
-      span,
-      &::before,
-      &::after {
-         content: "";
-         transition: all 0.3s ease 0s;
-         right: 0;
-         position: absolute;
-         width: 100%;
-         height: rem(2);
-         background-color: #000;
-      }
-      &::before {
-         top: 0;
-      }
-      &::after {
-         bottom: 0;
-      }
-      span {
-         top: calc(50% - rem(1));
-      }
-      .menu-open & {
-         span {
-            width: 0;
-         }
-         &::before,
-         &::after {
-         }
-         &::before {
+    @media (max-width: $mobile) {
+        display: block;
+        position: relative;
+        width: rem(30);
+        height: rem(18);
+        cursor: pointer;
+        z-index: 5;
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            background-color: #000;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
             top: calc(50% - rem(1));
-            transform: rotate(-45deg);
-         }
-         &::after {
-            bottom: calc(50% - rem(1));
-            transform: rotate(45deg);
-         }
-      }
-   }
-   &_bg-color-white {
-      @media (max-width: $mobile) {
-         span,
-         &::before,
-         &::after {
-            background-color: #fff;
-         }
-      }
-   }
+        }
+        .menu-open & {
+            span {
+                width: 0;
+            }
+            &::before,
+            &::after {
+            }
+            &::before {
+                top: calc(50% - rem(1));
+                transform: rotate(-45deg);
+            }
+            &::after {
+                bottom: calc(50% - rem(1));
+                transform: rotate(45deg);
+            }
+        }
+    }
+    &_bg-color-white {
+        @media (max-width: $mobile) {
+            span,
+            &::before,
+            &::after {
+                background-color: #fff;
+            }
+        }
+    }
 }

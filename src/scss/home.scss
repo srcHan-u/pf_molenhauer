@@ -619,10 +619,20 @@
 
     &__body {
         display: flex;
+        align-self: flex-start;
+        @media (max-width: em(1020)) {
+            flex-direction: column;
+            align-items: center;
+            row-gap: rem(30);
+        }
     }
 
     &__text-box {
         flex: 0 1 rem(290);
+        @media (max-width: em(1020)) {
+            flex: auto;
+            max-width: rem(323);
+        }
     }
 
     &__heading {
@@ -642,6 +652,10 @@
 
     &__slider {
         flex: 0 1 rem(936);
+        @media (max-width: em(1020)) {
+            flex: auto;
+            width: 100%;
+        }
     }
 }
 .reviews-slider {
@@ -649,16 +663,27 @@
     justify-content: space-between;
     min-height: rem(614);
     overflow: hidden;
+    column-gap: rem(15);
+    @media (max-width: $mobile) {
+        flex-direction: column-reverse;
+        align-items: center;
+        row-gap: rem(30);
+    }
     &__wrapper {
         border: 39px solid $mCOrange;
         position: relative;
         flex: 0 1 rem(577);
+        min-width: rem(359);
+        @media (max-width: $mobile) {
+            flex: auto;
+            width: 100%;
+        }
         &::before,
         &::after {
             content: "";
             display: block;
             position: absolute;
-            width: 39px;
+            width: rem(41);
             background-color: #fff;
             pointer-events: none;
             top: 50%;
@@ -678,6 +703,9 @@
     &__swiper-pagination {
         align-self: flex-end;
         max-width: rem(71);
+        @media (max-width: $mobile) {
+            align-self: center;
+        }
     }
 
     &__slide {
@@ -700,6 +728,9 @@
     }
     &__buttons {
         align-self: flex-end;
+        @media (max-width: $mobile) {
+            align-self: center;
+        }
     }
 }
 .reviews-slider-swiper-pagination {

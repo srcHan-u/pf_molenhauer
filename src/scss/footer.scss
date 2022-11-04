@@ -2,6 +2,7 @@
 .footer {
     background-color: $mCBlue;
     min-height: rem(80);
+    padding: rem(15) 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +32,11 @@
     }
 
     &__link {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 .footer-list {
@@ -53,6 +59,11 @@
     }
 
     &__link {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 

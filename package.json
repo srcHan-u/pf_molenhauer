@@ -19,6 +19,7 @@
 		"bem": "fls-bemtree-from-html"
 	},
 	"devDependencies": {
+		"circle-flags": "github:HatScripts/circle-flags",
 		"copy-webpack-plugin": "latest",
 		"css-loader": "latest",
 		"del": "^6.1.1",

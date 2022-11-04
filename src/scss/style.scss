@@ -139,6 +139,90 @@ body {
     }
 }
 
+.page {
+    position: relative;
+    &__main-screen {
+        @include adaptiveValue("padding-top", 186, 120);
+        @include adaptiveValue("padding-bottom", 218, 150);
+        background-image: url("../img/home/main-screen-image_bg.jpg");
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        &::after {
+            height: percent(628, 1029);
+            background: linear-gradient(180deg, #06255b 0%, rgba(6, 37, 91, 0) 100%);
+            width: 100%;
+        }
+        &::before {
+            content: "";
+            // display: block;
+            width: percent(1028, 1747);
+            height: 100%;
+            // position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(102deg, #06255b 0%, rgba(6, 37, 91, 0) 100%);
+            // transform: rotate();
+        }
+    }
+    &__services {
+        background-color: $mCBlue;
+        @include adaptiveValue("padding-bottom", 152, 120);
+        @include adaptiveValue("padding-top", 104, 50);
+    }
+
+    &__cases {
+        @include adaptiveValue("padding-bottom", 168, 120);
+    }
+    &__benefits {
+        @include adaptiveValue("padding-bottom", 182, 120);
+    }
+    &__partners {
+        @include adaptiveValue("padding-bottom", 92, 70);
+    }
+    &__reviews {
+        position: relative;
+        z-index: 2;
+        @include adaptiveValue("padding-bottom", 182, 120);
+    }
+    &__support {
+        @include adaptiveValue("padding-bottom", 184, 120);
+        background-color: #fff;
+        position: relative;
+        z-index: 2;
+    }
+    &__team {
+        @include adaptiveValue("padding-bottom", 244, 120);
+        background-color: #fff;
+    }
+    &__map {
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: rem(156);
+            height: rem(143);
+            background-color: $mCBlue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-100%);
+            clip-path: polygon(0% 0%, 100% 100%, 0% 100%, 0% 0%);
+        }
+    }
+}
 // Подключение базовых стилей, шаблонов (заготовок) и вспомогательных  классов
 // Для подключения/отключения конкретных стилей смотри base.scss
 @import "base";

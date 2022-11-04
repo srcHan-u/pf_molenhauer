@@ -35,6 +35,10 @@
         // flex-wrap: wrap;
         column-gap: rem(16);
         flex: 0 1 rem(329);
+        @media (max-width: $mobile) {
+            flex: auto;
+            flex-direction: column;
+        }
         // @media (max-width: $tablet) {
         //     flex-wrap: wrap-reverse;
         //     flex: 0 0 rem(143);
@@ -49,6 +53,10 @@
         background-color: $mCOrange;
         transition: border-color 0.4s ease 0s, color 0.4s ease 0s, background-color 0.4s ease 0s;
         pointer-events: all;
+        @media (max-width: $mobile) {
+            flex: auto;
+            width: 100%;
+        }
         @media (any-hover: hover) {
             &:hover {
                 border-color: #fff;
@@ -64,6 +72,11 @@
         background-color: #fff;
         min-height: rem(56);
         pointer-events: all;
+        @media (max-width: $mobile) {
+            flex: auto;
+            width: 100%;
+            border: 0.2px solid $mCOrange;
+        }
     }
 }
 
@@ -72,7 +85,7 @@
     justify-content: space-between;
     align-items: center;
     @media (max-width: $mobile) {
-        justify-content: center;
+        justify-content: flex-end;
     }
     &__icon {
     }
@@ -123,6 +136,11 @@
         &[data-active="true"] {
             opacity: 1;
         }
+        &[data-disabled] {
+            opacity: 0.5;
+            text-decoration: line-through;
+            pointer-events: none;
+        }
         @media (max-width: $mobile) {
             color: $mCBlue;
             font-size: rem(24);
@@ -138,23 +156,32 @@
     }
 }
 
-.button {
-}
 .switcher-lang {
     display: flex;
     justify-content: center;
     align-items: center;
     &__list {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        column-gap: rem(30);
+        flex: 0 0 100%;
+        // column-gap: rem(30);
     }
 
     &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: rem(6);
+        flex: auto;
     }
-
+    &__icon {
+        flex: 0 0 rem(12);
+        display: block;
+        max-width: rem(12);
+    }
     &__button {
+        // flex: auto;
     }
 }
 
@@ -169,6 +196,7 @@
     min-width: rem(320);
     transition: left 0.4s ease 0s;
     pointer-events: all;
+    overflow: auto;
     .menu-open & {
         left: 0;
     }

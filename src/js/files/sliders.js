@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,11 +27,8 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.slider-partners')) { // Указываем скласс нужного слайдера
-		// Создаем слайдер
-		new Swiper('.slider-partners', { // Указываем скласс нужного слайдера
-			// Подключаем модули слайдера
-			// для конкретного случая
+	if (document.querySelector('.slider-partners') ) { 
+		new Swiper('.slider-partners', { 
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
@@ -105,6 +102,67 @@ function initSliders() {
 			}
 		});
 	}
+	if (document.querySelector('.slider-case') && window.innerWidth <= 1728) {
+		new Swiper('.slider-case', { 
+            modules: [Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 6,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 1200,
+            preloadImages: false,
+			lazy: true,
+			simulateTouch: false,
+            pagination: {
+				el: '.slider-case__swiper-pagination',
+				clickable: true,
+			},
+            breakpoints: {
+                320: {
+					slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+				625: {
+					slidesPerView: 2,
+				},
+				920: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1240: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
+				1580: {
+					slidesPerView: 5,
+					spaceBetween: 30,
+				},
+			},
+        })
+    }
+	if (document.querySelector('.slider-review')) {
+        new Swiper(".slider-review", {
+            modules: [Pagination, Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 1200,
+            preloadImages: false,
+			lazy: true,
+			simulateTouch: false,
+            centeredSlides: true,
+            grabCursor: false,
+            roundLengths: true,
+            pagination: {
+				el: '.slider-review__pagination',
+				clickable: true,
+			},
+        })
+    }
+
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {

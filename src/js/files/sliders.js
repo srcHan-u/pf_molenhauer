@@ -148,7 +148,7 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			autoHeight: true,
+			autoHeight: false,
 			speed: 1200,
             preloadImages: false,
 			lazy: true,
@@ -157,7 +157,7 @@ function initSliders() {
             grabCursor: false,
             roundLengths: true,
             pagination: {
-				el: '.slider-review__pagination',
+				el: '.slider-review-pagination',
 				clickable: true,
 			},
         })

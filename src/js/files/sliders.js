@@ -1,6 +1,6 @@
 // Документация слайдера: https://swiperjs.com/
 
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination, Parallax} from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -24,6 +24,7 @@ function initSliders() {
 			spaceBetween: 0,
 			autoHeight: false,
 			speed: 1200,
+            grabCursor: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
@@ -101,7 +102,7 @@ function initSliders() {
 			speed: 1200,
             preloadImages: false,
 			lazy: true,
-			simulateTouch: false,
+			simulateTouch: true,
             pagination: {
 				el: '.slider-case__swiper-pagination',
 				clickable: true,
@@ -142,12 +143,18 @@ function initSliders() {
 			lazy: true,
 			simulateTouch: false,
             centeredSlides: true,
-            grabCursor: false,
             roundLengths: true,
+			simulateTouch: true,
+            grabCursor: true,
             pagination: {
 				el: '.slider-review-pagination',
 				clickable: true,
 			},
+            navigation: {
+				prevEl: '.swiper-buttons-box__button-prev',
+				nextEl: '.swiper-buttons-box__button-next',
+			},
+             
         })
     }
 

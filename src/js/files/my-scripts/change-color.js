@@ -5,17 +5,17 @@ const mainScreen = document.querySelector(".main-screen");
 // const burgerIcon =
 
 window.addEventListener("DOMContentLoaded", () => {
-  let a = mainScreen.getBoundingClientRect().height;
+  let skipScreen = mainScreen.getBoundingClientRect().height;
   if (window.innerWidth > 767.98) {
     document.addEventListener("scroll", () => {
-      if ((window.scrollY + 105) > a) {
+      if ((window.scrollY + 105) > skipScreen) {
         logo.style.fill = "#06255b";
         for (const link of links) {
           link.style.color = "#06255b";
         }
         switcher.style.backgroundColor = "#06255b";
         switcher.style.color = "#fff";
-      } else if (window.scrollY <= a) {
+      } else if (window.scrollY <= skipScreen) {
         logo.style.fill = "#fff";
         for (const link of links) {
           link.style.color = "#fff";
@@ -24,5 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
         switcher.style.color = "#06255b";
       }
     });
+  }else{
+    
   }
 });

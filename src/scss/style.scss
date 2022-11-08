@@ -68,6 +68,7 @@ body {
     font-weight: 400;
     line-height: 1;
     background-color: #f7f9fc;
+    position: relative;
     .lock & {
         overflow: hidden;
         touch-action: none;

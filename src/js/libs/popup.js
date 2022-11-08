@@ -38,7 +38,8 @@ class Popup {
 				goHash: true, // Переход по наличию в адресной строке
 			},
 			on: { // События
-				beforeOpen: function () { },
+				beforeOpen: function () {
+                },
 				afterOpen: function () { },
 				beforeClose: function () { },
 				afterClose: function () { },
@@ -102,7 +103,7 @@ class Popup {
 		this.options.init ? this.initPopups() : null
 	}
 	initPopups() {
-		this.popupLogging(`Проснулся`);
+		// this.popupLogging(`Проснулся`);
 		this.eventsPopup();
 	}
 	eventsPopup() {
